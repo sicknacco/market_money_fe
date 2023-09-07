@@ -7,9 +7,9 @@ RSpec.describe 'Markets index page' do
 
       expect(page).to have_content('Markets')
       within '#markets' do
-        expect(page).to have_content('Name')
-        expect(page).to have_content('City')
-        expect(page).to have_content('State')
+        expect(page).to have_content("14&U Farmers' Market")
+        expect(page).to have_content('Washington')
+        expect(page).to have_content('District of Columbia')
       end
     end
   end
