@@ -8,7 +8,7 @@ RSpec.describe Market do
         "type": "market",
         "attributes": {
             "name": "14&U Farmers' Market",
-            "street": "1400 U Street NW ",
+            "street": "1400 U Street NW",
             "city": "Washington",
             "county": "District of Columbia",
             "state": "District of Columbia",
@@ -25,7 +25,8 @@ RSpec.describe Market do
       expect(market.name).to eq("14&U Farmers' Market")
       expect(market.city).to eq("Washington")
       expect(market.state).to eq("District of Columbia")
-
+      expect(market.street).to eq("1400 U Street NW")
+      expect(market.zip).to eq("20009")
     end
   end
 end
