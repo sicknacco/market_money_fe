@@ -13,10 +13,20 @@ RSpec.describe MarketService do
         expect(market[:attributes]).to have_key :name
         expect(market[:attributes][:name]).to be_a String
         expect(market[:attributes]).to have_key :city
-        # expect(market[:attributes][:city]).to be_a String
         expect(market[:attributes]).to have_key :state
         expect(market[:attributes][:state]).to be_a String
       end
+    end
+
+    it '#one_market returns a single market', :vcr do
+      response = MarketService.one_market(322458)
+
+      expect(response).to be_a Hash
+      expect(response[:data][:attributes][:name]).to eq("14&U Farmers' Market")
+      expect(response[:data][:attributes][:city]).to eq('Washington')
+      expect(response[:data][:attributes][:state]).to eq('District of Columbia')
+      expect(response[:data][:attributes][:street]).to eq('1400 U Street NW ')
+      expect(response[:data][:attributes][:zip]).to eq('20009')
     end
   end
 end
