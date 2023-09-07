@@ -28,5 +28,16 @@ RSpec.describe MarketService do
       expect(response[:data][:attributes][:street]).to eq('1400 U Street NW ')
       expect(response[:data][:attributes][:zip]).to eq('20009')
     end
+
+    it '#market_vendors returns all vendors for a market', :vcr do
+      response = MarketService.market_vendors(322458)
+      
+      expect(response).to be_a Hash
+      expect(response[:data]).to be_an Array
+      response[:data].each do |vendor|
+        expect(vendor[:attributes]).to have_key :name
+        expect(vendor[:attributes][:name]).to be_a String
+      end
+    end
   end
 end
