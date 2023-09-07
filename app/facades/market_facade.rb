@@ -4,4 +4,9 @@ class MarketFacade
       Market.new(market_data)
     end
   end
+
+  def self.get_market(id)
+    market = MarketService.one_market(id)[:data]
+    Market.new(market)
+  end
 end
