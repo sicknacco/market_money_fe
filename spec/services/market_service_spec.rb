@@ -13,6 +13,7 @@ RSpec.describe MarketService do
         expect(market[:attributes]).to have_key :name
         expect(market[:attributes][:name]).to be_a String
         expect(market[:attributes]).to have_key :city
+        expect(market[:attributes][:city]).to be_a(String).or be_nil
         expect(market[:attributes]).to have_key :state
         expect(market[:attributes][:state]).to be_a String
       end
