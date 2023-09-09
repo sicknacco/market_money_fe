@@ -1,4 +1,8 @@
 class MarketService
+  def self.search_markets(name, city, state)
+    get_url("/api/v0/markets?name=#{name}&city=#{city}&state=#{state}")
+  end
+
   def self.all_markets
     get_url('/api/v0/markets')
   end
