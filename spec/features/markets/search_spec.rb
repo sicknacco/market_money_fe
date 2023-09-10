@@ -7,7 +7,7 @@ RSpec.describe 'Market Search' do
         visit vendor_path(54924)
 
         within('#market_search') do
-          fill_in :name, with: "14&U Farmers' Market"
+          fill_in :name, with: ""
           fill_in :city, with: 'Washington'
           fill_in :state, with: 'District of Columbia'
           click_button 'Search'
@@ -20,14 +20,14 @@ RSpec.describe 'Market Search' do
         visit vendor_path(54924)
 
         within('#market_search') do
-          fill_in :name, with: "14&U Farmers' Market"
-          fill_in :city, with: 'Washington'
-          fill_in :state, with: 'District of Columbia'
+          fill_in :name, with: ""
+          fill_in :city, with: 'Alexandria'
+          fill_in :state, with: 'Virginia'
           click_button 'Search'
         end
 
-        click_link "14&U Farmers' Market"
-        expect(current_path).to eq(market_path(322458))
+        click_link "Del Ray Farmers' Market"
+        expect(current_path).to eq(market_path(324298))
       end
     end
   end

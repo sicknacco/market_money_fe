@@ -11,22 +11,25 @@ Description: <%= @vendor.description %>
 <br>
 <h5>Search for Markets to add this vendor:</h5>
 <div id='market_search'>
-  <%= form_with url: vendor_path(@vendor.id), method: :get, local: true do |form| %>
-    <%= form.label :name %>
+  <%= form_with url: vendor_path(@vendor.id), method: :get do |form| %>
+    <%= form.label :name, 'Name' %>
     <%= form.text_field :name %>
-    <%= form.label :city %>
+    <%= form.label :city, 'City' %>
     <%= form.text_field :city %>
-    <%= form.label :state %>
+    <%= form.label :state, 'State' %>
     <%= form.text_field :state %>
     <%= form.submit "Search" %>
   <% end %>
 </div>
 <br>
 <div id='search_results'>
-  <ul>
-    <% @markets.each do |market| %>
-      <li><%= link_to market.name, market_path(market.id) %></li>
-    <% end %>
-  </ul>
+  <%# <% if params[:name].present? || params[:city].present? || params[:state].present? %> %>
+    <ul>
+      <p><%= @markets.count %> Search Results for city=<%= params[:city] %> and state=<%= params[:state] %></p>
+      <% @markets.each do |market| %>
+        <li><%= link_to market.name, market_path(market.id) %></li>
+      <% end %>
+    </ul>
+  <%# <% end %> %>
 </div>
 
