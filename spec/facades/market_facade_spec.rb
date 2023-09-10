@@ -37,4 +37,19 @@ RSpec.describe MarketFacade do
       end
     end
   end
+
+  describe '#returned_markets' do
+    it 'returns an array of Market objects matching search criteria', :vcr do
+      name = "14&U Farmers' Market"
+      city = 'Washington'
+      state = 'District of Columbia'
+      markets = MarketFacade.returned_markets(name, city, state)
+
+      expect(markets).to be_an Array
+      markets.each do |market|
+        expect(market).to be_a Market
+        expect(market.name).to be_a String
+      end
+    end
+  end
 end

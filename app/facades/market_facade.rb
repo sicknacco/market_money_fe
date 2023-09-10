@@ -15,4 +15,10 @@ class MarketFacade
       Vendor.new(vendor_data)
     end
   end
+
+  def self.returned_markets(name, city, state)
+    MarketService.search_markets(name, city, state)[:data].map do |market_data|
+      Market.new(market_data)
+    end
+  end
 end

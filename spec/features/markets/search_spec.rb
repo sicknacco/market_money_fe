@@ -12,7 +12,7 @@ RSpec.describe 'Market Search' do
           fill_in :state, with: 'New York'
           click_button 'Search'
         end
-save_and_open_page
+
         expect(current_path).to eq(vendor_path(54924))
         expect(page).to have_link('Union Square Greenmarket')
       end
