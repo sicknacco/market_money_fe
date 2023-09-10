@@ -21,3 +21,12 @@ Description: <%= @vendor.description %>
     <%= form.submit "Search" %>
   <% end %>
 </div>
+<br>
+<div id='search_results'>
+  <ul>
+    <% @markets.each do |market| %>
+      <li><%= link_to market.name, market_path(market.id) %></li>
+    <% end %>
+  </ul>
+</div>
+

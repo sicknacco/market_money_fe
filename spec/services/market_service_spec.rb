@@ -42,11 +42,10 @@ RSpec.describe MarketService do
     end
 
     it '#search_markets returns all markets matching search criteria', :vcr do
-      name = "14&U Farmers' Market"
+      name = "Farmers' Market"
       city = 'Washington'
       state = 'District of Columbia'
       response = MarketService.search_markets(name, city, state)
-
       expect(response).to be_a Hash
       expect(response[:data]).to be_an Array
       response[:data].each do |market|
