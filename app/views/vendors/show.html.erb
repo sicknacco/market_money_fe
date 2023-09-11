@@ -23,13 +23,13 @@ Description: <%= @vendor.description %>
 </div>
 <br>
 <div id='search_results'>
-  <%# <% if params[:name].present? || params[:city].present? || params[:state].present? %> %>
+  <% if params[:name].present? || params[:city].present? || params[:state].present? %>
     <ul>
-      <p><%= @markets.count %> Search Results for city=<%= params[:city] %> and state=<%= params[:state] %></p>
+      <p><%= @markets.count %> Search Results for name=<%= params[:name] %> city=<%= params[:city] %> and state=<%= params[:state] %></p>
       <% @markets.each do |market| %>
         <li><%= link_to market.name, market_path(market.id) %></li>
       <% end %>
     </ul>
-  <%# <% end %> %>
+  <% end %>
 </div>
 
