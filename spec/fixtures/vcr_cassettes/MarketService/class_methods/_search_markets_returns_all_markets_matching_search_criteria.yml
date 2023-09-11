@@ -159,4 +159,67 @@ http_interactions:
         Farmers'' Market","street":"First and R Streets NW","city":"Washington","county":"District
         of Columbia","state":"District of Columbia","zip":"20009","lat":"38.9126037","lon":"-77.0121571","vendor_count":0}}]}'
   recorded_at: Sun, 10 Sep 2023 02:12:43 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/v0/markets/search?city=Washington&name=&state=District%20of%20Columbia
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"981e5e0d4fe135c7b4e2fe07acecd206"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 520d44cf-e2a9-4079-9e7c-3b693a45fa08
+      X-Runtime:
+      - '0.147225'
+      Server-Timing:
+      - sql.active_record;dur=68.20, start_processing.action_controller;dur=0.09,
+        instantiation.active_record;dur=11.99, process_action.action_controller;dur=73.11
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"322458","type":"market","attributes":{"name":"14\u0026U
+        Farmers'' Market","street":"1400 U Street NW ","city":"Washington","county":"District
+        of Columbia","state":"District of Columbia","zip":"20009","lat":"38.9169984","lon":"-77.0320505","vendor_count":1}},{"id":"322691","type":"market","attributes":{"name":"Arcadia''s
+        Mobile Market -- Parkside Unity Healthcare/Circle 7 Express","street":"740
+        Kenilworth Ave NE","city":"Washington","county":"District of Columbia","state":"District
+        of Columbia","zip":"20019","lat":"38.9007582","lon":"-76.9468929","vendor_count":8}},{"id":"322692","type":"market","attributes":{"name":"Arcadia''s
+        Mobile Market -- The Overlook at Oxon Run","street":"3700 9th St SE ","city":"Washington","county":"District
+        of Columbia","state":"District of Columbia","zip":"20032","lat":"38.8358959","lon":"-76.9940286","vendor_count":0}},{"id":"323082","type":"market","attributes":{"name":"Bloomingdale
+        Farmers'' Market","street":"First and R Streets NW","city":"Washington","county":"District
+        of Columbia","state":"District of Columbia","zip":"20009","lat":"38.9126037","lon":"-77.0121571","vendor_count":0}},{"id":"330561","type":"market","attributes":{"name":"Ward
+        8 Farmers Market","street":"Martin Luther King Elementary School, 3200 6th
+        Street SE (Alabama Ave. Entrance)","city":"Washington, DC","county":"District
+        of Columbia","state":"District of Columbia","zip":"20032","lat":"38.842872","lon":"-76.997391","vendor_count":2}}]}'
+  recorded_at: Mon, 11 Sep 2023 14:03:43 GMT
 recorded_with: VCR 6.2.0

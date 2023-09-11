@@ -12,11 +12,11 @@ Description: <%= @vendor.description %>
 <h5>Search for Markets to add this vendor:</h5>
 <div id='market_search'>
   <%= form_with url: vendor_path(@vendor.id), method: :get do |form| %>
-    <%= form.label :name, 'Name' %>
+    <%= form.label :name %>
     <%= form.text_field :name %>
-    <%= form.label :city, 'City' %>
+    <%= form.label :city %>
     <%= form.text_field :city %>
-    <%= form.label :state, 'State' %>
+    <%= form.label :state %>
     <%= form.text_field :state %>
     <%= form.submit "Search" %>
   <% end %>
